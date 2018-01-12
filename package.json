@@ -1,0 +1,58 @@
+{
+  "name": "postcss-escape",
+  "version": "0.0.1",
+  "description": "",
+  "author": "Gavin <someotter@tadpot.com>",
+  "license": "CC0-1.0",
+  "repository": "mindthetic/postcss-escape",
+  "homepage": "https://github.com/mindthetic/postcss-escape#readme",
+  "bugs": "https://github.com/mindthetic/postcss-escape/issues",
+  "main": "index.bundle.js",
+  "module": "index.js",
+  "files": [
+    "index.js",
+    "index.bundle.js"
+  ],
+  "scripts": {
+    "prepublishOnly": "npm test",
+    "pretest": "rollup -c .rollup.js --silent",
+    "test": "echo 'Running tests...'; npm run test:ec && npm run test:js && npm run test:tape",
+    "test:ec": "echint --ignore index.bundle.js test",
+    "test:js": "eslint *.js --cache --ignore-path .gitignore --quiet",
+    "test:tape": "postcss-tape"
+  },
+  "engines": {
+    "node": ">=4.0.0"
+  },
+  "dependencies": {
+    "cssesc": "^1.0.0",
+    "postcss": "^6.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26",
+    "babel-eslint": "^8.1",
+    "babel-preset-env": "^1.6",
+    "echint": "^4.0",
+    "eslint": "^4.14",
+    "eslint-config-dev": "2.0",
+    "postcss-tape": "2.2",
+    "pre-commit": "^1.2",
+    "rollup": "^0.53",
+    "rollup-plugin-babel": "^3.0"
+  },
+  "eslintConfig": {
+    "extends": "dev",
+    "parser": "babel-eslint"
+  },
+  "keywords": [
+    "postcss",
+    "css",
+    "postcss-plugin",
+    "css escape",
+    "special characters",
+    "leading digits",
+    "whitespace characters",
+    "underscores",
+    "unicode characters"
+  ]
+}
